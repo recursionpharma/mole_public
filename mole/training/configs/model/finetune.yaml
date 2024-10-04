@@ -1,0 +1,28 @@
+# @package _global_
+data_file: ???
+model_dir: '${get_path: ${full_path: ${data_file}}}'
+task: regression
+num_tasks: 1
+dropout: ???
+lr: ???
+
+model:
+  name: MolE_Fine_tunning
+  description: 'Fine tunning learnt MolE on specific dataset'
+
+  data:
+    trainer:
+      max_epochs: 100
+
+  hyperparameters:
+    datamodule:
+      data: '${full_path: ${data_file}}'
+      folds: null
+
+    pl_module:
+      model:
+        loss_fn: ${tasks[${task}][loss]}
+        num_tasks: ${num_tasks}
+        dropout: ${dropout}
+      optimizer:
+        lr: ${lr}

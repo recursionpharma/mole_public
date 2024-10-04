@@ -1,0 +1,105 @@
+defaults:
+  - _self_
+  - model: ???
+  - deberta_config: base
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .
+
+name_sufix:
+benchmark: tdc
+submit_job: True
+keep_configs: False
+atom_label: AtomEnvs
+model_dir: null
+checkpoint_path: null
+task: classification
+aux_labels: null
+use_class_weights: False
+
+tasks:
+  classification:
+    metrics: mole.training.utils.metrics.get_classification_metrics
+    loss:
+      _target_: torch.nn.BCEWithLogitsLoss
+      reduction: 'none'
+  regression:
+    metrics: mole.training.utils.metrics.get_regression_metrics
+    loss:
+      _target_: torch.nn.MSELoss
+      reduction: 'none'
+
+logger:
+  _target_: pytorch_lightning.loggers.WandbLogger
+  save_dir: ./
+  name: ${model.name}
+  project: mole
+  log_model: true
+
+model:
+  data:
+    trainer:
+      _target_: pytorch_lightning.Trainer
+      accelerator: gpu
+      log_every_n_steps: 10
+      num_sanity_val_steps: 0
+      gradient_clip_val: 1.0
+      check_val_every_n_epoch: 5
+      callbacks:
+        - _target_: pytorch_lightning.callbacks.ModelCheckpoint
+          dirpath: ./
+          every_n_train_steps: null
+          every_n_epochs: ${model.data.trainer.check_val_every_n_epoch}
+          save_top_k: 1
+          save_last: false
+          mode: 'min'
+          monitor: val_mean_loss
+          filename: "lightning_checkpoint-{epoch}-{step}"
+          verbose: true
+          save_weights_only: true
+        - _target_: pytorch_lightning.callbacks.TQDMProgressBar
+          refresh_rate: 10
+      plugins:
+        _target_: lightning_fabric.plugins.environments.TorchElasticEnvironment
+      precision: 16
+      use_distributed_sampler: false
+      benchmark: true
+      logger: ${logger}
+
+  hyperparameters:
+    datamodule:
+      _target_: mole.training.data.data_modules.MolDataModule
+      data: null
+      validation_data: null
+      vocabulary_inp: 'vocabulary_207atomenvs_radius0_ZINC_guacamole.pkl'
+      radius_inp: 0
+      useFeatures_inp: False
+      use_class_weights: ${use_class_weights}
+      batch_size:  32
+      num_workers: 4
+
+    pl_module:
+      _target_: mole.training.models.MolE
+      model:
+        _target_: mole.training.models.Supervised
+        num_classes: 1
+        vocab_size_inp: 211
+      checkpoint_path: ${checkpoint_path}
+      optimizer:
+        _target_: torch.optim.Adam
+        _partial_: true
+        betas:
+        - 0.9
+        - 0.999
+        eps: 0.000001
+        weight_decay: 0.0
+      lr_scheduler:
+        _target_: mole.training.utils.schedulers.get_constant_schedule_with_warmup
+        _partial_: true
+        num_warmup_steps:
+      metrics:
+        _target_: ${tasks[${task}][metrics]}

@@ -1,0 +1,17 @@
+git+https://github.com/omendezlucio/DeBERTa.git
+hydra-core==1.2.0
+lightning-fabric
+numcodecs
+numexpr
+numpy<2
+omegaconf
+onnx
+onnxruntime
+pyarrow
+pytorch-lightning>=2.1
+PyTDC==0.4.1
+rdkit-pypi
+tensorboardX # pytorch-optimized version of tensorboard, used by pytorch-lightning
+torch
+torch-geometric
+wandb

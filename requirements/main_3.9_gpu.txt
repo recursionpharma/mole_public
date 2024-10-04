@@ -1,0 +1,428 @@
+aiohappyeyeballs==2.4.3
+    # via aiohttp
+aiohttp==3.10.8
+    # via
+    #   fsspec
+    #   torch-geometric
+aiosignal==1.3.1
+    # via aiohttp
+annotated-types==0.7.0
+    # via pydantic
+antlr4-python3-runtime==4.9.3
+    # via
+    #   hydra-core
+    #   omegaconf
+async-timeout==4.0.3
+    # via aiohttp
+attrs==24.2.0
+    # via aiohttp
+blis==0.7.11
+    # via thinc
+catalogue==2.0.10
+    # via
+    #   spacy
+    #   srsly
+    #   thinc
+certifi==2024.8.30
+    # via
+    #   requests
+    #   sentry-sdk
+charset-normalizer==3.3.2
+    # via requests
+click==8.1.7
+    # via
+    #   nltk
+    #   typer
+    #   wandb
+cloudpathlib==0.19.0
+    # via weasel
+coloredlogs==15.0.1
+    # via onnxruntime
+confection==0.1.5
+    # via
+    #   thinc
+    #   weasel
+contourpy==1.3.0
+    # via matplotlib
+cycler==0.12.1
+    # via matplotlib
+cymem==2.0.8
+    # via
+    #   preshed
+    #   spacy
+    #   thinc
+dataclasses==0.6
+    # via pytdc
+deberta @ git+https://github.com/omendezlucio/DeBERTa.git
+    # via -r requirements/main.in
+docker-pycreds==0.4.0
+    # via wandb
+exceptiongroup==1.2.2
+    # via pytest
+filelock==3.16.1
+    # via
+    #   huggingface-hub
+    #   torch
+    #   triton
+flatbuffers==24.3.25
+    # via onnxruntime
+fonttools==4.54.1
+    # via matplotlib
+frozenlist==1.4.1
+    # via
+    #   aiohttp
+    #   aiosignal
+fsspec==2024.9.0
+    # via
+    #   huggingface-hub
+    #   lightning-fabric
+    #   pytorch-lightning
+    #   torch
+    #   torch-geometric
+fuzzywuzzy==0.18.0
+    # via pytdc
+gitdb==4.0.11
+    # via gitpython
+gitpython==3.1.43
+    # via wandb
+huggingface-hub==0.25.1
+    # via pytdc
+humanfriendly==10.0
+    # via coloredlogs
+hydra-core==1.2.0
+    # via -r requirements/main.in
+idna==3.10
+    # via
+    #   requests
+    #   yarl
+importlib-resources==6.4.5
+    # via matplotlib
+iniconfig==2.0.0
+    # via pytest
+jinja2==3.1.4
+    # via
+    #   spacy
+    #   torch
+    #   torch-geometric
+joblib==1.4.2
+    # via
+    #   nltk
+    #   scikit-learn
+kiwisolver==1.4.7
+    # via matplotlib
+langcodes==3.4.1
+    # via spacy
+language-data==1.2.0
+    # via langcodes
+lightning-fabric==2.4.0
+    # via -r requirements/main.in
+lightning-utilities==0.11.7
+    # via
+    #   lightning-fabric
+    #   pytorch-lightning
+    #   torchmetrics
+marisa-trie==1.2.0
+    # via language-data
+markdown-it-py==3.0.0
+    # via rich
+markupsafe==2.1.5
+    # via jinja2
+matplotlib==3.9.2
+    # via seaborn
+mdurl==0.1.2
+    # via markdown-it-py
+mpmath==1.3.0
+    # via sympy
+multidict==6.1.0
+    # via
+    #   aiohttp
+    #   yarl
+murmurhash==1.0.10
+    # via
+    #   preshed
+    #   spacy
+    #   thinc
+networkx==3.2.1
+    # via torch
+nltk==3.9.1
+    # via deberta
+numcodecs==0.12.1
+    # via -r requirements/main.in
+numexpr==2.10.1
+    # via -r requirements/main.in
+numpy==1.26.4
+    # via
+    #   -r requirements/main.in
+    #   blis
+    #   contourpy
+    #   deberta
+    #   matplotlib
+    #   numcodecs
+    #   numexpr
+    #   onnx
+    #   onnxruntime
+    #   pandas
+    #   pyarrow
+    #   pytdc
+    #   rdkit-pypi
+    #   scikit-learn
+    #   scipy
+    #   seaborn
+    #   seqeval
+    #   spacy
+    #   tensorboardx
+    #   thinc
+    #   torch-geometric
+    #   torchmetrics
+nvidia-cublas-cu12==12.1.3.1
+    # via
+    #   nvidia-cudnn-cu12
+    #   nvidia-cusolver-cu12
+    #   torch
+nvidia-cuda-cupti-cu12==12.1.105
+    # via torch
+nvidia-cuda-nvrtc-cu12==12.1.105
+    # via torch
+nvidia-cuda-runtime-cu12==12.1.105
+    # via torch
+nvidia-cudnn-cu12==9.1.0.70
+    # via torch
+nvidia-cufft-cu12==11.0.2.54
+    # via torch
+nvidia-curand-cu12==10.3.2.106
+    # via torch
+nvidia-cusolver-cu12==11.4.5.107
+    # via torch
+nvidia-cusparse-cu12==12.1.0.106
+    # via
+    #   nvidia-cusolver-cu12
+    #   torch
+nvidia-nccl-cu12==2.20.5
+    # via torch
+nvidia-nvjitlink-cu12==12.6.77
+    # via
+    #   nvidia-cusolver-cu12
+    #   nvidia-cusparse-cu12
+nvidia-nvtx-cu12==12.1.105
+    # via torch
+omegaconf==2.3.0
+    # via
+    #   -r requirements/main.in
+    #   hydra-core
+onnx==1.17.0
+    # via -r requirements/main.in
+onnxruntime-gpu==1.19.2
+    # via -r requirements/main.in
+packaging==24.1
+    # via
+    #   huggingface-hub
+    #   hydra-core
+    #   lightning-fabric
+    #   lightning-utilities
+    #   matplotlib
+    #   onnxruntime
+    #   pytest
+    #   pytorch-lightning
+    #   spacy
+    #   tensorboardx
+    #   thinc
+    #   torchmetrics
+    #   weasel
+pandas==2.2.3
+    # via
+    #   pytdc
+    #   seaborn
+pillow==10.4.0
+    # via
+    #   matplotlib
+    #   rdkit-pypi
+platformdirs==4.3.6
+    # via wandb
+pluggy==1.5.0
+    # via pytest
+preshed==3.0.9
+    # via
+    #   spacy
+    #   thinc
+protobuf==5.28.2
+    # via
+    #   onnx
+    #   onnxruntime
+    #   tensorboardx
+    #   wandb
+psutil==6.0.0
+    # via
+    #   deberta
+    #   torch-geometric
+    #   wandb
+pyarrow==17.0.0
+    # via -r requirements/main.in
+pydantic==2.9.2
+    # via
+    #   confection
+    #   spacy
+    #   thinc
+    #   weasel
+pydantic-core==2.23.4
+    # via pydantic
+pygments==2.18.0
+    # via rich
+pyparsing==3.1.4
+    # via
+    #   matplotlib
+    #   torch-geometric
+pytdc==0.4.1
+    # via -r requirements/main.in
+pytest==8.3.3
+    # via deberta
+python-dateutil==2.9.0.post0
+    # via
+    #   matplotlib
+    #   pandas
+pytorch-lightning==2.4.0
+    # via -r requirements/main.in
+pytz==2024.2
+    # via pandas
+pyyaml==6.0.2
+    # via
+    #   huggingface-hub
+    #   omegaconf
+    #   pytorch-lightning
+    #   wandb
+rdkit-pypi==2022.9.5
+    # via
+    #   -r requirements/main.in
+    #   pytdc
+regex==2024.9.11
+    # via
+    #   deberta
+    #   nltk
+requests==2.32.3
+    # via
+    #   huggingface-hub
+    #   pytdc
+    #   spacy
+    #   torch-geometric
+    #   wandb
+    #   weasel
+rich==13.9.1
+    # via typer
+scikit-learn==1.5.2
+    # via
+    #   deberta
+    #   pytdc
+    #   seqeval
+scipy==1.13.1
+    # via
+    #   deberta
+    #   scikit-learn
+seaborn==0.13.2
+    # via pytdc
+sentencepiece==0.2.0
+    # via deberta
+sentry-sdk==2.15.0
+    # via wandb
+seqeval==1.2.2
+    # via deberta
+setproctitle==1.3.3
+    # via wandb
+shellingham==1.5.4
+    # via typer
+six==1.16.0
+    # via
+    #   docker-pycreds
+    #   python-dateutil
+smart-open==7.0.4
+    # via weasel
+smmap==5.0.1
+    # via gitdb
+spacy==3.7.5
+    # via deberta
+spacy-legacy==3.0.12
+    # via spacy
+spacy-loggers==1.0.5
+    # via spacy
+srsly==2.4.8
+    # via
+    #   confection
+    #   spacy
+    #   thinc
+    #   weasel
+sympy==1.13.3
+    # via
+    #   onnxruntime
+    #   torch
+tensorboardx==2.6.2.2
+    # via -r requirements/main.in
+thinc==8.2.5
+    # via spacy
+threadpoolctl==3.5.0
+    # via scikit-learn
+tomli==2.0.2
+    # via pytest
+torch==2.4.1
+    # via
+    #   -r requirements/main.in
+    #   deberta
+    #   lightning-fabric
+    #   pytorch-lightning
+    #   torchmetrics
+torch-geometric==2.6.1
+    # via -r requirements/main.in
+torchmetrics==1.4.2
+    # via pytorch-lightning
+tqdm==4.66.5
+    # via
+    #   deberta
+    #   huggingface-hub
+    #   nltk
+    #   pytdc
+    #   pytorch-lightning
+    #   spacy
+    #   torch-geometric
+triton==3.0.0
+    # via torch
+typer==0.12.5
+    # via
+    #   spacy
+    #   weasel
+typing-extensions==4.12.2
+    # via
+    #   cloudpathlib
+    #   huggingface-hub
+    #   lightning-fabric
+    #   lightning-utilities
+    #   multidict
+    #   pydantic
+    #   pydantic-core
+    #   pytorch-lightning
+    #   rich
+    #   torch
+    #   typer
+    #   wandb
+tzdata==2024.2
+    # via pandas
+ujson==5.10.0
+    # via deberta
+urllib3==2.2.3
+    # via
+    #   requests
+    #   sentry-sdk
+wandb==0.18.3
+    # via -r requirements/main.in
+wasabi==1.1.3
+    # via
+    #   spacy
+    #   thinc
+    #   weasel
+weasel==0.4.1
+    # via spacy
+wrapt==1.16.0
+    # via smart-open
+yarl==1.13.1
+    # via aiohttp
+zipp==3.20.2
+    # via importlib-resources
+
+# The following packages are considered to be unsafe in a requirements file:
+# setuptools

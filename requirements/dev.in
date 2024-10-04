@@ -1,0 +1,21 @@
+-c main
+
+bandit
+black
+build
+coverage
+docstr-coverage
+flake8
+ipykernel
+isort
+mypy
+pandas-stubs
+pre-commit
+pytest
+pytest-cov
+pytest-env
+safety
+tox
+typeguard
+types-PyYAML
+yapf
